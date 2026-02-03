@@ -4,7 +4,7 @@ export async function GET(request: NextRequest) {
     const APIKEY = process.env.APIKEY;
 
     console.log(APIKEY);
-
+w
     // 1. URLからクエリパラメータを取得
     const { searchParams } = new URL(request.url);
     const city = searchParams.get("city");

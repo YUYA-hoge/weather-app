@@ -5,6 +5,7 @@ import { useState } from "react";
 export default function Home() {
   const [city, setCity] = useState("");
   const [weather, setWeather] = useState(""); // 文字列として初期化
+  const [temp, setTemp] = useState(null);
 
   const handleSearch = async () => {
     if (!city) return;
@@ -19,6 +20,7 @@ export default function Home() {
     } else {
       // route.tsで返している「weather（説明文）」をセット
       setWeather(data.weather); 
+      setTemp(data.temp);
     }
   };
 
@@ -33,6 +35,12 @@ export default function Home() {
         {weather && (
           <p className="text-2xl font-bold text-gray-700 animate-bounce">
             {weather}
+          </p>
+        )}
+                {/* 天気のテキストをシンプルに表示 */}
+        {temp && (
+          <p className="text-2xl font-bold text-gray-700 animate-bounce">
+            {temp}℃
           </p>
         )}
       </div>
