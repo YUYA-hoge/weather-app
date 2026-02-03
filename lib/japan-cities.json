@@ -1,0 +1,17 @@
+[
+    { "id": 1850147, "name": "Tokyo", "jpName": "東京" },
+    { "id": 1853909, "name": "Osaka", "jpName": "大阪" },
+    { "id": 1856057, "name": "Nagoya", "jpName": "名古屋" },
+    { "id": 1848354, "name": "Yokohama", "jpName": "横浜" },
+    { "id": 1850144, "name": "Kyoto", "jpName": "京都" },
+    { "id": 1863285, "name": "Fukuoka", "jpName": "福岡" },
+    { "id": 1859171, "name": "Kobe", "jpName": "神戸" },
+    { "id": 2128295, "name": "Sapporo", "jpName": "札幌" },
+    { "id": 1853226, "name": "Hiroshima", "jpName": "広島" },
+    { "id": 1850157, "name": "Sendai", "jpName": "仙台" },
+    { "id": 1855429, "name": "Okayama", "jpName": "岡山" },
+    { "id": 1850152, "name": "Saitama", "jpName": "さいたま" },
+    { "id": 1862415, "name": "Chiba", "jpName": "千葉" },
+    { "id": 1859063, "name": "Kitakyushu", "jpName": "北九州" },
+    { "id": 1856215, "name": "Naha", "jpName": "那覇" }
+]
