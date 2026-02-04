@@ -29,8 +29,7 @@ export default function Home() {
       <div className="w-full max-w-md p-6 flex flex-col items-center gap-6">
         <Title />
         <Input label="都市を入力" onChange={setCity} />
-        <Button label="検索" onClick={handleSearch} />
-        
+        <Button label="検索" onClick={handleSearch} />        
         {/* 天気のテキストをシンプルに表示 */}
         {weather && (
           <p className="text-2xl font-bold text-gray-700 animate-bounce">
