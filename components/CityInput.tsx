@@ -2,7 +2,6 @@
 
 import { Autocomplete, TextField } from "@mui/material";
 
-// 型定義
 interface City {
   id: number;
   name: string;
@@ -11,20 +10,20 @@ interface City {
 
 type Props = {
   label: string;
-  cities: City[]; // サーバーから受け取るデータ
-  onChange: (val: string) => void;
+  cities: City[];
+  value: City | null; // 追加：現在選択されている都市オブジェクト
+  onChange: (city: City | null) => void; // 修正：Cityオブジェクトごと渡す
 };
 
-export default function CityInput({ label, cities, onChange }: Props) {
+export default function CityInput({ label, cities, value, onChange }: Props) {
   return (
     <Autocomplete
       options={cities}
+      value={value} // 親からの状態を反映
       getOptionLabel={(option) => `${option.jpName} (${option.name})`}
       fullWidth
       onChange={(_event, newValue) => {
-        if (newValue) {
-          onChange(newValue.name);
-        }
+        onChange(newValue); // 親に選択結果を伝える
       }}
       renderInput={(params) => (
         <TextField {...params} label={label} variant="outlined" />
