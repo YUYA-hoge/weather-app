@@ -18,6 +18,7 @@ type Props = {
 export default function CityInput({ label, cities, value, onChange }: Props) {
   return (
     <Autocomplete
+      id="city-autocomplete"
       options={cities}
       value={value} // 親からの状態を反映
       getOptionLabel={(option) => `${option.jpName} (${option.name})`}
