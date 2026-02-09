@@ -1,3 +1,5 @@
 export { default as Title}  from "./Title"
 export { default as CityInput}  from "./CityInput"
 export { default as Button}  from "./Button"
+export { default as WeatherSection}  from "./WeatherSection"
+export { default as ButtonAppBar}  from "./ButtonAppBar"

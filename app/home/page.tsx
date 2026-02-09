@@ -1,6 +1,6 @@
-import { Title } from "@/components/index";
+import { Title, ButtonAppBar } from "@/components/index";
 import WeatherSection from "@/components/WeatherSection";
-import { auth, signOut } from "@/auth";
+import { auth } from "@/auth";
 import { redirect } from "next/navigation";
 
 async function getCities() {
@@ -20,16 +20,15 @@ export default async function HomePage() {
   const initialCities = await getCities();
 
   return (
-    <main className="bg-gray-50 min-h-screen flex items-center justify-center p-4">
-      <div className="w-full max-w-md p-6 flex flex-col items-center gap-6">
-        <div className="w-full flex justify-between items-center text-sm text-gray-600">
-          <span>{session.user?.name}さん、こんにちは</span>
-          <form action={async () => { "use server"; await signOut(); }}>
-            <button className="text-red-500 hover:underline">ログアウト</button>
-          </form>
+    <main className="bg-gray-50 min-h-screen flex flex-col">
+      <ButtonAppBar user={session.user}/>
+
+      {/* justify-center を外し、上部にパディングを入れる */}
+      <div className="flex-1 flex flex-col items-center pt-20 p-4">
+        <div className="w-full max-w-md flex flex-col items-center gap-6">
+          <Title />
+          <WeatherSection initialCities={initialCities} />
         </div>
-        <Title />
-        <WeatherSection initialCities={initialCities} />
       </div>
     </main>
   );
