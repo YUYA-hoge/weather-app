@@ -9,6 +9,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button'; // サインアウトボタン用に追加
 import { signOut } from "next-auth/react"; // クライアント側でサインアウトを実行
+import { redirect } from "next/navigation";
 
 interface ButtonAppBarProps {
   user?: {
@@ -33,7 +34,17 @@ export default function ButtonAppBar({ user }: ButtonAppBarProps) {
             <MenuIcon />
           </IconButton>
           
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          <Typography
+            variant="h6"
+            component="div"
+            sx={{ 
+              flexGrow: 1, 
+              cursor: user ? 'pointer' : 'default' // リンクの時はカーソルを指にする
+            }}
+            onClick={() => {
+              if (user) redirect('/home');
+            }}
+          >
             {user ? "お天気チェッカー" : "ログイン画面"}
           </Typography>
 
@@ -54,6 +65,7 @@ export default function ButtonAppBar({ user }: ButtonAppBarProps) {
                 alt={user.name || ""} 
                 src={user.image || ""} 
                 sx={{ width: 32, height: 32, border: '1px solid white' }}
+                onClick={() => redirect("/mypage")}
               />
 
               {/* ログアウトボタン */}

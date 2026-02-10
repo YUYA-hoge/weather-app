@@ -20,7 +20,7 @@ export default async function LoginPage() {
       {/* 2. 残りのスペース（flex-1）を使ってカードを中央配置 */}
       <div className="flex-1 flex flex-col items-center pt-20 p-4">
         <div className="w-full max-w-md p-8 bg-white rounded-2xl shadow-sm flex flex-col items-center gap-6">
-          <Title />
+          <Title title={"ログイン"}/>
           <p className="text-gray-500 text-sm text-center">
             ログインして、お気に入りの都市の天気をチェックしましょう。
           </p>
