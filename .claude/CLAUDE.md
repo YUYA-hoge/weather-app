@@ -16,6 +16,10 @@ No test suite is currently configured.
 
 必ず日本語で回答してください。
 
+## 実装するコードについて
+もし、既存のコードがあったら、その書き方をベースに実装してください。
+そしたら、私が書いたコードと似ててわかりやすくなるので。
+
 ## Required Environment Variables
 
 Create `.env.local` with the following:
