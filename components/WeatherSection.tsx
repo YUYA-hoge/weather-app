@@ -160,7 +160,7 @@ export default function WeatherSection({ initialCities }: { initialCities: City[
             />
 
             {/* ボタンエリア */}
-            <div className="flex gap-2 w-full">
+            <div className="flex flex-col sm:flex-row gap-2 w-full">
                 <Button label="検索" onClick={handleSearch} />
                 <Button label="現在地から検索" onClick={handleSearchToPosition} />
             </div>
