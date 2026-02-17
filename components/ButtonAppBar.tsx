@@ -49,9 +49,9 @@ export default function ButtonAppBar({ user }: ButtonAppBarProps) {
           </Typography>
 
           {user && (
-            <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-              {/* ユーザー名とメールアドレス */}
-              <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end' }}>
+            <Box sx={{ display: 'flex', alignItems: 'center', gap: { xs: 1, sm: 2 } }}>
+              {/* ユーザー名とメールアドレス：スマホでは非表示 */}
+              <Box sx={{ display: { xs: 'none', sm: 'flex' }, flexDirection: 'column', alignItems: 'flex-end' }}>
                 <Typography variant="body2" sx={{ lineHeight: 1, fontWeight: 'bold' }}>
                   {user.name}
                 </Typography>
@@ -61,20 +61,26 @@ export default function ButtonAppBar({ user }: ButtonAppBarProps) {
               </Box>
 
               {/* アバター */}
-              <Avatar 
-                alt={user.name || ""} 
-                src={user.image || ""} 
-                sx={{ width: 32, height: 32, border: '1px solid white' }}
+              <Avatar
+                alt={user.name || ""}
+                src={user.image || ""}
+                sx={{ width: 32, height: 32, border: '1px solid white', cursor: 'pointer' }}
                 onClick={() => redirect("/mypage")}
               />
 
               {/* ログアウトボタン */}
-              <Button 
-                color="inherit" 
-                variant="outlined" 
+              <Button
+                color="inherit"
+                variant="outlined"
                 size="small"
                 onClick={() => signOut({ callbackUrl: "/" })}
-                sx={{ ml: 1, borderColor: 'rgba(255, 255, 255, 0.5)', '&:hover': { borderColor: 'white' } }}
+                sx={{
+                  borderColor: 'rgba(255, 255, 255, 0.5)',
+                  '&:hover': { borderColor: 'white' },
+                  fontSize: { xs: '0.7rem', sm: '0.875rem' },
+                  px: { xs: 1, sm: 2 },
+                  whiteSpace: 'nowrap',
+                }}
               >
                 ログアウト
               </Button>
